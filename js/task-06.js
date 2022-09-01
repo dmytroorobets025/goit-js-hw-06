@@ -1,12 +1,14 @@
 
 
-const focusInput = document.querySelector("#validation-input")
-focusInput.addEventListener("blur", e => inputHandle(e))
-function inputHandle(e) {
-    console.log(focusInput.getAttribute("data-length"))
-    if (e.target.value.length == focusInput.getAttribute("data-length")) {
-        focusInput.classList.add("valid")
-    } else {
-        focusInput.classList.add("invalid")
+const refs = {
+    inputRef: document.querySelector("#validation-input"),
+};
+refs.inputRef.addEventListener("blur", (event) => {
+    let inputText = event.currentTarget.value;
+
+    if (inputText.length === +refs.inputRef.dataset.length) {
+        refs.inputRef.classList.remove("invalid");
+        return refs.inputRef.classList.add("valid");
     }
-}
+    return refs.inputRef.classList.add("invalid");
+});

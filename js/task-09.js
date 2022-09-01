@@ -1,7 +1,7 @@
 
 
-const colorElementBody = document.querySelector(".widget");
-const changeColorButton = document.querySelector(".change-color")
+const colorElementBody = document.querySelector('.js-change-color');
+const changeColorButton = document.querySelector('.change-color')
 const span = document.querySelector('.color')
 changeColorButton.addEventListener('click', () => selectColor())
 
