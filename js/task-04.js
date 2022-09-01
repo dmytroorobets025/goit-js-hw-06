@@ -1,16 +1,17 @@
 
 
-const removeBtn = document.querySelector(".js-remove-btn");
-const targetBtn = document.querySelector(".js-target-btn");
-const addBtn = document.querySelector(".js-add-btn");
+let counterValue = document.querySelector('#value');
 
-addBtn.addEventListener('click', () => handelButton())
+const decrementBtnEl = document.querySelector('button[data-action="decrement"]');
+const incrementBtnEl = document.querySelector('button[data-action="increment"]');
 
-function handelButton() {
-    targetBtn.innerText = Number(targetBtn.innerText) + 1
+const increment = () => {
+    counterValue.textContent = Number(counterValue.textContent) + 1;
 }
 
-removeBtn.addEventListener('click', () => handelRemoveButton())
-function handelRemoveButton() {
-    targetBtn.innerText = Number(targetBtn.innerText) - 1
+const decrement = () => {
+    counterValue.textContent = Number(counterValue.textContent) - 1;
 }
+
+decrementBtnEl.addEventListener('click', decrement);
+incrementBtnEl.addEventListener('click', increment);
